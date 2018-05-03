@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div id="app" class="container">
+    <div id="nav" class="text-center">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -9,21 +9,23 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import './assets/app.scss';
+
 #nav {
   padding: 30px;
-  a {
+  a,a:visited {
     font-weight: bold;
-    color: #2c3e50;
+    @apply text-teal;
     &.router-link-exact-active {
-      color: #42b983;
+      @apply text-grey no-underline cursor-auto;
     }
   }
 }
+body {
+  @apply bg-blue-lightest font-sans;
+}
+p {
+  @apply m-4;
+}
+
 </style>
