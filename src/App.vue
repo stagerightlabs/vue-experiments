@@ -29,4 +29,7 @@ p {
   @apply m-4;
 }
 
+[v-cloak] {
+  display: none;
+}
 </style>
