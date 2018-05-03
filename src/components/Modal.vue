@@ -1,5 +1,5 @@
   <template>
-  <div class="absolute pin w-full h-full bg-smoke-light flex">
+  <div class="absolute pin w-full h-full bg-smoke-light flex" @click.self="close">
     <div class="max-w-md w-full lg:flex self-center m-auto">
       <div class="border border-grey-light lg:border lg:border-grey-light bg-white  lg:rounded p-4 flex flex-col justify-between leading-normal">
         <div class="mb-8">
@@ -24,6 +24,13 @@ export default {
     close() {
       this.$emit('closed')
     }
+  },
+  mounted() {
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode === 27) {
+        this.close();
+      }
+    });
   }
 }
 </script>
