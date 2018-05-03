@@ -4,14 +4,15 @@ import router from './router';
 import store from './store';
 import 'vue-awesome/icons/times'
 import Icon from 'vue-awesome/components/Icon'
+import PortalVue from 'portal-vue'
 
-// globally (in your main .js file)
+// Register the portal component
+Vue.use(PortalVue)
+
+// Register the font-awesome icon component
 Vue.component('icon', Icon)
 
 Vue.config.productionTip = false;
-
-// globally (in your main .js file)
-Vue.component('icon', Icon)
 
 new Vue({
   router,
