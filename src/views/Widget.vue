@@ -13,7 +13,14 @@
       <div class="flex my-2">
         <div class="w-1/2 text-right">Project:</div>
         <div class="w-1/2">
-          <input-text class="m-2 border-b-2 border-dotted" v-model="widget.project" placeholder="project..." tabindex="104" aria-labelledby="red1" aria-describedby="red1Description" required></input-text>
+          <input-text class="m-2 border-b-2 border-dotted"
+            v-model="widget.project"
+            placeholder="project..."
+            tabindex="104"
+            aria-labelledby="red1"
+            aria-describedby="red1Description"
+            required>
+          </input-text>
         </div>
       </div>
       <div class="flex my-2">
@@ -27,23 +34,23 @@
 </template>
 
 <script>
-import TextInput from "@/components/TextInput.vue";
-import ContentInput from "@/components/ContentInput.vue";
+import TextInput from '@/components/TextInput.vue';
+import ContentInput from '@/components/ContentInput.vue';
 
 export default {
   components: {
-    "input-text": TextInput,
-    "content-text": ContentInput
+    'input-text': TextInput,
+    'content-text': ContentInput,
   },
   data() {
     return {
       widget: {
-        name: "fred",
-        project: "red herring",
-        supervisor: "johnson"
-      }
+        name: 'fred',
+        project: 'red herring',
+        supervisor: 'johnson',
+      },
     };
-  }
+  },
 };
 </script>
 

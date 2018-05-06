@@ -31,42 +31,42 @@
 export default {
   props: {
     value: {
-      default: ""
+      default: '',
     },
     tabindex: {
-      default: 0
+      default: 0,
     },
     type: {
-      default: "text"
+      default: 'text',
     },
     placeholder: {
-      default: ""
+      default: '',
     },
     ariaLabelledby: {
-      default: ""
+      default: '',
     },
     ariaDescribedby: {
-      default: ""
+      default: '',
     },
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     autofocus: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       editing: false,
       content: this.value,
-      backup: ''
+      backup: '',
     };
   },
   methods: {
     sync() {
-      this.$emit("input", this.content);
+      this.$emit('input', this.content);
     },
     focus() {
       this.editing = true;
@@ -75,22 +75,22 @@ export default {
     },
     blur() {
       this.editing = false;
-      this.sync()
+      this.sync();
     },
     input() {
-      this.content = this.$refs.textInput.value
-      this.sync()
+      this.content = this.$refs.textInput.value;
+      this.sync();
     },
     escape() {
-      this.content = this.backup
+      this.content = this.backup;
       this.blur();
     },
     shiftEnter() {
-      this.$refs.textInput.value =  this.$refs.textInput.value + "\n"
-      console.log(this.$refs.textInput.value)
-      this.input()
-    }
-  }
+      this.$refs.textInput.value = `${this.$refs.textInput.value}\n`;
+      // console.log(this.$refs.textInput.value);
+      this.input();
+    },
+  },
 };
 </script>
 
