@@ -7,7 +7,7 @@
       <div class="flex my-2">
         <div class="w-1/2 text-right">Name:</div>
         <div class="w-1/2">
-          <input-text class="m-2" :value="widget.name"></input-text>
+          <input-textarea class="m-2" :value="widget.name"></input-textarea>
         </div>
       </div>
       <div class="flex my-2">
@@ -35,12 +35,14 @@
 
 <script>
 import TextInput from '@/components/TextInput.vue';
+import TextArea from '@/components/TextArea.vue';
 import ContentInput from '@/components/ContentInput.vue';
 
 export default {
   components: {
     'input-text': TextInput,
     'content-text': ContentInput,
+    'input-textarea': TextArea,
   },
   data() {
     return {
