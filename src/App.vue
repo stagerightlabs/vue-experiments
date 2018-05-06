@@ -2,7 +2,8 @@
   <div id="app" class="container">
     <div id="nav" class="text-center">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/widget">Widget</router-link>
     </div>
     <router-view/>
     <portal-target name="modals"></portal-target>
