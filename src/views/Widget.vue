@@ -19,12 +19,7 @@
       <div class="flex my-2">
         <div class="w-1/2 text-right">Supervisor:</div>
         <div class="w-1/2">
-          <content-wrapper>
-            <div slot-scope="{}">
-              <input type="text">
 
-            </div>
-          </content-wrapper>
         </div>
       </div>
     </div>
@@ -33,12 +28,10 @@
 
 <script>
 import TextInput from "@/components/TextInput.vue";
-import ContentWrapper from "@/components/ContentWrapper.vue";
 
 export default {
   components: {
     "content-text": TextInput,
-    "content-wrapper": ContentWrapper
   },
   data() {
     return {
