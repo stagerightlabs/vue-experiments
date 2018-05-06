@@ -5,7 +5,7 @@
     @blur.capture="blur"
     @keydown.enter="blur"
     @keydown.esc="escape"
-    @keydown.shift.enter="shiftEnter"
+    @keydown.shift.enter.prevent="shiftEnter"
     :tabindex="tabindex"
     >
     <span v-show="editing">
@@ -16,13 +16,13 @@
         :aria-describedby="ariaDescribedby"
         :required="required"
         :autofocus="autofocus"
-        :value="value"
+        :value="content"
         @input="input"
         ref='textInput'
         style="background-color: transparent; border: none;"
       >
     </span>
-    <span v-show="!editing">{{ value }}</span>
+    <span v-show="!editing">{{ content }}</span>
 
   </span>
 </template>
@@ -60,28 +60,35 @@ export default {
   data() {
     return {
       editing: false,
-      backup: ""
+      content: this.value,
+      backup: ''
     };
   },
   methods: {
+    sync() {
+      this.$emit("input", this.content);
+    },
     focus() {
       this.editing = true;
-      this.backup = this.value;
+      this.backup = this.content;
       this.$nextTick(() => this.$refs.textInput.focus());
-      console.log(this.$refs.textInput);
     },
     blur() {
       this.editing = false;
+      this.sync()
     },
     input() {
-      this.$emit("input", this.$refs.textInput.value);
+      this.content = this.$refs.textInput.value
+      this.sync()
     },
     escape() {
-      this.$emit("input", this.backup);
+      this.content = this.backup
       this.blur();
     },
     shiftEnter() {
-      alert("shiftin`");
+      this.$refs.textInput.value =  this.$refs.textInput.value + "\n"
+      console.log(this.$refs.textInput.value)
+      this.input()
     }
   }
 };
