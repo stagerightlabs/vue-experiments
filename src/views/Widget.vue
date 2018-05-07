@@ -26,7 +26,13 @@
       <div class="flex my-2">
         <div class="w-1/2 text-right">Supervisor:</div>
         <div class="w-1/2">
-          <content-text class="m-2" v-model="widget.supervisor"></content-text>
+          <content-text class="ml-2 border-b-2 border-dotted" v-model="widget.supervisor"></content-text>
+        </div>
+      </div>
+      <div class="flex my-2">
+        <div class="w-1/2 text-right">Supervisor:</div>
+        <div class="w-1/2">
+          <input type="text" v-model="widget.supervisor">
         </div>
       </div>
     </div>

@@ -1,25 +1,18 @@
 <template>
-  <span
-    @focus.capture="focus"
-    @click.capture="focus"
-    @blur.capture="blur"
-    @keydown.enter="blur"
+  <div
     @keydown.esc="escape"
-    @keydown.shift.enter.prevent="shiftEnter"
+    @keydown.shift.enter.prevent="blur"
+    @input="input"
+    @blur="blur"
     :tabindex="tabindex"
     :type="type"
     :placeholder="placeholder"
     :aria-labelledby="ariaLabelledby"
     :aria-describedby="ariaDescribedby"
-    :required="required"
     :autofocus="autofocus"
-    @input="input"
-    ref='textInput'
-    style="background-color: transparent; border: none;"
-    contenteditable=""
+    contenteditable="true"
     >
-    {{ content }}
-  </span>
+  </div>
 </template>
 
 <script>
@@ -55,35 +48,49 @@ export default {
   data() {
     return {
       editing: false,
-      content: this.value,
-      backup: '',
+      original: '',
     };
   },
   methods: {
+    backup() {
+      this.original = this.$el.innerText;
+    },
+    restore() {
+      this.$el.innerText = this.original;
+    },
     sync() {
-      this.$emit('input', this.content);
+      this.$emit('input', this.$el.innerText);
     },
     focus() {
-      this.editing = true;
-      this.backup = this.content;
-      this.$nextTick(() => this.$refs.textInput.focus());
+      console.log('focus');
+      // this.backup();
+      this.$nextTick(() => this.$el.focus());
     },
     blur() {
-      this.editing = false;
+      console.log('blurred');
+      this.$el.blur();
       this.sync();
+      // this.backup();
     },
     input() {
-      this.content = this.$refs.textInput.value;
       this.sync();
     },
     escape() {
-      this.content = this.backup;
+      this.restore();
+      this.sync();
       this.blur();
     },
-    shiftEnter() {
-      this.$refs.textInput.value = `${this.$refs.textInput.value}\n`;
-      // console.log(this.$refs.textInput.value);
-      this.input();
+  },
+  mounted() {
+    this.$el.innerText = this.value;
+    this.backup();
+  },
+  watch: {
+    value() {
+      if (document.activeElement !== this.$el) {
+        this.$el.innerText = this.value;
+        this.backup();
+      }
     },
   },
 };
