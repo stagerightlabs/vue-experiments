@@ -4,6 +4,7 @@
     @keydown.shift.enter.prevent="blur"
     @input="input"
     @blur="blur"
+    @focusin="focus"
     :tabindex="tabindex"
     :type="type"
     :placeholder="placeholder"
@@ -63,7 +64,7 @@ export default {
     },
     focus() {
       console.log('focus');
-      // this.backup();
+      this.backup();
       this.$nextTick(() => this.$el.focus());
     },
     blur() {
