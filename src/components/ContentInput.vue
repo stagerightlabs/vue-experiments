@@ -11,6 +11,7 @@
     :aria-labelledby="ariaLabelledby"
     :aria-describedby="ariaDescribedby"
     :autofocus="autofocus"
+    style="display:inline-block"
     contenteditable="true"
     >
   </div>
@@ -54,10 +55,13 @@ export default {
   },
   methods: {
     backup() {
-      this.original = this.$el.innerText;
+      this.original = this.$el.innerText.trim();
     },
     restore() {
       this.$el.innerText = this.original;
+    },
+    trim() {
+      this.$el.innerText = this.$el.innerText.trim();
     },
     sync() {
       this.$emit('input', this.$el.innerText);
@@ -70,8 +74,8 @@ export default {
     blur() {
       console.log('blurred');
       this.$el.blur();
+      this.trim();
       this.sync();
-      // this.backup();
     },
     input() {
       this.sync();
