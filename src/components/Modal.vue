@@ -4,7 +4,7 @@
       <div class="border border-grey-light lg:border lg:border-grey-light
         bg-white lg:rounded p-4 flex flex-col justify-between
         leading-normal w-full">
-        <div class="mb-8">
+        <div class="">
           <span @click="close">
             <icon name="times" class="float-right cursor-pointer"></icon>
           </span>

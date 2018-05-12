@@ -1,11 +1,7 @@
 <template>
-  <div class="home text-center">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas illum
-      autem itaque nostrum dolorum, consequatur neque quidem impedit quas ab
-      tempore magnam praesentium voluptatem dolores! Dolore iste rerum sunt id.
-    </p>
-    <p>
+  <div class="home">
+    <h1>Modals</h1>
+    <p class="text-center">
       <coffee-button>Hello {{ name }}!</coffee-button>
       <name-tag-button>My Name is...</name-tag-button>
     </p>

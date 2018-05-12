@@ -1,5 +1,5 @@
 <template>
-  <button @click="show" class="bg-teal hover:bg-teal-dark text-white font-bold
+  <button @click="show" class="bg-green hover:bg-green-dark text-white font-bold
     py-2 px-4 m-4 rounded cursor-pointer">
     <slot>Click Me!</slot>
     <portal to="modals" v-if="visible">
