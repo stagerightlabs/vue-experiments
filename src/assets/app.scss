@@ -11,6 +11,39 @@
  */
 @tailwind preflight;
 
+
+/**
+ * Application Styles
+ */
+
+#nav {
+  @apply .border-b .border-green-dark;
+
+  a,a:visited {
+    font-weight: bold;
+
+    @apply .block .w-full .py-4 .text-center .border-t .border-green-dark .text-white;
+    @apply .no-underline .text-xl .text-green-dark;
+
+    &.router-link-exact-active {
+      @apply .bg-green-dark .text-white .cursor-auto;
+    }
+  }
+}
+
+
+body {
+  @apply .font-sans .bg-white;
+}
+
+p {
+  @apply m-4;
+}
+
+[v-cloak] {
+  display: none;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
