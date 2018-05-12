@@ -7,7 +7,7 @@
     </p>
     <p>
       <coffee-button>Hello {{ name }}!</coffee-button>
-      <name-tag-button @new-name="changeName">My Name is...</name-tag-button>
+      <name-tag-button>My Name is...</name-tag-button>
     </p>
   </div>
 </template>
@@ -17,6 +17,7 @@
 
 import CoffeeMessage from '@/components/CoffeeMessage.vue';
 import NameTag from '@/components/NameTag.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'home',
@@ -24,15 +25,14 @@ export default {
     'coffee-button': CoffeeMessage,
     'name-tag-button': NameTag,
   },
+  computed: {
+    ...mapState([
+      'name',
+    ]),
+  },
   data() {
     return {
-      name: 'Coffee',
     };
-  },
-  methods: {
-    changeName(name) {
-      this.name = name;
-    },
   },
 };
 </script>

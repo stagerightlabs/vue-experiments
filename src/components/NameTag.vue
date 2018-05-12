@@ -38,6 +38,7 @@
 
 <script>
 import Modal from '@/components/Modal.vue';
+import { mapMutations } from 'vuex';
 
 export default {
   components: {
@@ -57,10 +58,13 @@ export default {
       this.visible = false;
     },
     submit() {
-      this.$emit('new-name', this.name);
+      this.changeName(this.name);
       this.name = '';
       this.close();
     },
+    ...mapMutations([
+      'changeName',
+    ]),
   },
 };
 </script>
