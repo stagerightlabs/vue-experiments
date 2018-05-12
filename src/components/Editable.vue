@@ -81,7 +81,6 @@ export default {
       this.$emit('input', this.$refs.content.innerText);
     },
     focus() {
-      console.log('focus');
       this.backup();
       this.$nextTick(() => this.$refs.content.focus());
     },
