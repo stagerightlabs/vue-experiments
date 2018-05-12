@@ -1,5 +1,7 @@
 <template>
+  <div>
   <div
+    ref="content"
     @keydown.esc="escape"
     @keydown.shift.enter.prevent="blur"
     @input="input"
@@ -13,7 +15,10 @@
     :autofocus="autofocus"
     style="display:inline-block"
     contenteditable="true"
-    >
+    ></div>
+    <div @click="focus" style="display:inline-block; cursor:pointer">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -53,27 +58,31 @@ export default {
       original: '',
     };
   },
+  computed: {
+    hasValue() {
+      return this.value.length > 0;
+    },
+  },
   methods: {
     backup() {
-      this.original = this.$el.innerText.trim();
+      this.original = this.$refs.content.innerText.trim();
     },
     restore() {
-      this.$el.innerText = this.original;
+      this.$refs.content.innerText = this.original;
     },
     trim() {
-      this.$el.innerText = this.$el.innerText.trim();
+      this.$refs.content.innerText = this.$refs.content.innerText.trim();
     },
     sync() {
-      this.$emit('input', this.$el.innerText);
+      this.$emit('input', this.$refs.content.innerText);
     },
     focus() {
       console.log('focus');
       this.backup();
-      this.$nextTick(() => this.$el.focus());
+      this.$nextTick(() => this.$refs.content.focus());
     },
     blur() {
-      console.log('blurred');
-      this.$el.blur();
+      this.$refs.content.blur();
       this.trim();
       this.sync();
     },
@@ -87,13 +96,13 @@ export default {
     },
   },
   mounted() {
-    this.$el.innerText = this.value;
+    this.$refs.content.innerText = this.value;
     this.backup();
   },
   watch: {
     value() {
-      if (document.activeElement !== this.$el) {
-        this.$el.innerText = this.value;
+      if (document.activeElement !== this.$refs.content) {
+        this.$refs.content.innerText = this.value;
         this.backup();
       }
     },
