@@ -10,7 +10,7 @@ import HelloWorld from '@/components/HelloWorld.vue';
 export default {
   name: 'about',
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>

@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/widget',
       name: 'widget',
-      component: Widget
+      component: Widget,
     },
   ],
 });
