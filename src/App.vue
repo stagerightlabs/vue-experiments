@@ -4,7 +4,7 @@
       <img src="@/assets/logo.png" alt="vue js logo" class="self-center w-32 mx-4 mt-4">
       <p class="self-center text-green-darkest m-4">Experimenting with VueJs</p>
       <div id="nav">
-        <router-link to="/">Home</router-link>
+        <router-link to="/">Modals</router-link>
         <router-link to="/content-editing">Content Editing</router-link>
       </div>
       <p class="self-center m-8">
