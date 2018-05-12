@@ -5,7 +5,6 @@
       <p class="self-center text-green-darkest m-4">Experimenting with VueJs</p>
       <div id="nav">
         <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
         <router-link to="/content-editing">Content Editing</router-link>
       </div>
       <p class="self-center m-8">
