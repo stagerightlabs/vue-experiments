@@ -1,9 +1,7 @@
 <template>
-  <div class="widget">
-    <h1>Widget</h1>
-    <p class="bg-grey-lighter border p-4 mx-0 font-mono">{{ widget }}</p>
-    <hr>
-    <div class="border p-4">
+  <div>
+    <h1>Content Editing</h1>
+    <div class="border p-4 mt-4">
       <div class="flex my-2">
         <div class="w-1/2 text-right">Name:</div>
         <div class="w-1/2">
@@ -39,6 +37,9 @@
         </div>
       </div>
     </div>
+    <hr>
+    <h4 class="mt-4">Object:</h4>
+    <p class="bg-grey-lighter border p-4 mx-0 font-mono">{{ widget }}</p>
   </div>
 </template>
 

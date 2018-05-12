@@ -6,7 +6,7 @@
       <div id="nav">
         <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
-        <router-link to="/widget">Widget</router-link>
+        <router-link to="/content-editing">Content Editing</router-link>
       </div>
       <p class="self-center m-8">
         <a

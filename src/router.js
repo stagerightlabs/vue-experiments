@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import About from './views/About.vue';
-import Widget from './views/Widget.vue';
+import ContentEditing from './views/ContentEditing.vue';
 
 Vue.use(Router);
 
@@ -20,9 +20,9 @@ export default new Router({
       component: About,
     },
     {
-      path: '/widget',
-      name: 'widget',
-      component: Widget,
+      path: '/content-editing',
+      name: 'content-editing',
+      component: ContentEditing,
     },
   ],
 });
