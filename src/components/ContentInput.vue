@@ -13,6 +13,7 @@
     :aria-labelledby="ariaLabelledby"
     :aria-describedby="ariaDescribedby"
     :autofocus="autofocus"
+    :class="inputClass"
     style="display:inline-block"
     contenteditable="true"
     ></div>
@@ -50,6 +51,9 @@ export default {
     autofocus: {
       type: Boolean,
       default: false,
+    },
+    inputClass: {
+      default: '',
     },
   },
   data() {
