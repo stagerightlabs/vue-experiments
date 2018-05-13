@@ -8,16 +8,20 @@
         </transition>
       </div>
     </div>
+    <!-- Alert Stack -->
+    <flash-stack></flash-stack>
+    <!-- Portals -->
     <portal-target name="modals"></portal-target>
   </div>
 </template>
 
 <script>
 import MainMenu from '@/components/MainMenu.vue';
+import FlashStack from '@/components/FlashStack.vue';
 
 export default {
   components: {
-    MainMenu,
+    MainMenu, FlashStack,
   },
 };
 </script>

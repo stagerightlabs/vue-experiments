@@ -21,6 +21,7 @@
       <div id="nav" ref="nav" class="hidden md:block">
         <router-link to="/">Modals</router-link>
         <router-link to="/content-editing">Content Editing</router-link>
+        <router-link to="/toast-notifications">Toast Notifications</router-link>
       </div>
     </transition>
     <p class="self-center mt-8 hidden md:inline">
