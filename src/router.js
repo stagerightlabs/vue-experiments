@@ -11,6 +11,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'home',
+      component: Modals,
+    },
+    {
+      path: '/modals',
       name: 'modals',
       component: Modals,
     },
