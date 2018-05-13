@@ -17,13 +17,21 @@
  */
 
 #nav {
-  @apply .border-b .border-green-dark;
+  transition: all 3s ease;
+
+  @screen md {
+    @apply .border-b .border-green-dark;
+  }
 
   a,a:visited {
     font-weight: bold;
 
-    @apply .block .w-full .py-4 .text-center .border-t .border-green-dark .text-white;
+    @apply .block .w-full .py-4 .text-center .border-0 .text-white;
     @apply .no-underline .text-xl .text-green-dark;
+
+    @screen md {
+      @apply .border-t .border-green-dark;
+    }
 
     &.router-link-exact-active {
       @apply .bg-green-dark .text-white .cursor-auto;
