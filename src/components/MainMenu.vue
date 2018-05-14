@@ -22,7 +22,11 @@
         <router-link to="/">Modals</router-link>
         <router-link to="/content-editing">Content Editing</router-link>
         <router-link to="/toast-notifications">Toast Notifications</router-link>
-        <router-link to="/typeahead">Typeahead</router-link>
+        <router-link to="/typeahead">Typeahead
+          <figure title="Work in progress..." class="inline-block text-green-darkest">
+            <icon name="exclamation-triangle"></icon>
+          </figure>
+        </router-link>
       </div>
     </transition>
     <p class="self-center mt-8 hidden md:inline">
