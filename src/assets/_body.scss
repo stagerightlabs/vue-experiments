@@ -1,0 +1,48 @@
+#nav {
+  transition: all 3s ease;
+
+  @screen md {
+    @apply .border-b .border-green-dark;
+  }
+
+  a,a:visited {
+    font-weight: bold;
+
+    @apply .block .w-full .py-4 .text-center .border-0 .text-white;
+    @apply .no-underline .text-xl .text-green-dark;
+
+    @screen md {
+      @apply .border-t .border-green-dark;
+    }
+
+    &.router-link-exact-active {
+      @apply .bg-green-dark .text-white .cursor-auto;
+    }
+  }
+}
+
+
+body {
+  @apply .font-sans .bg-white;
+}
+
+p {
+  @apply m-4;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+a, a:visited {
+  @apply .text-green .no-underline;
+}
+
+.keyboard-symbol {
+  @apply .font-mono .bg-grey-lighter .rounded-sm .border .border-grey .pt-1 .px-1 .text-grey-darker shadow;
+  padding-bottom: 0.12rem;
+}
+
+code {
+  @apply .bg-grey-lighter .px-1;
+}
