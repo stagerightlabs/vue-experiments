@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="display: inline">
   <div
     ref="content"
     @keydown.esc="escape"
@@ -14,7 +14,6 @@
     :aria-describedby="ariaDescribedby"
     :autofocus="autofocus"
     :class="inputClass"
-    style="display:inline-block"
     contenteditable="true"
     ></div>
     <div @click="focus" style="display:inline-block; cursor:pointer">
