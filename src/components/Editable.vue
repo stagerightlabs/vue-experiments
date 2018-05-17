@@ -16,8 +16,8 @@
     :class="inputClass"
     contenteditable="true"
     ></div>
-    <div @click="focus" style="display:inline-block; cursor:pointer">
-      <slot></slot>
+    <div v-if="hasSlotContent" @click="focus" style="display:inline-block; cursor:pointer">
+      <slot ></slot>
     </div>
   </div>
 </template>
@@ -64,6 +64,9 @@ export default {
   computed: {
     hasValue() {
       return this.value.length > 0;
+    },
+    hasSlotContent() {
+      return !!this.$slots.default;
     },
   },
   methods: {
