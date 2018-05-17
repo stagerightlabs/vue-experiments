@@ -60,6 +60,10 @@ p {
   display: none;
 }
 
+a, a:visited {
+  @apply .text-green .no-underline;
+}
+
 .keyboard-symbol {
   @apply .font-mono .bg-grey-lighter .rounded-sm .border .border-grey .pt-1 .px-1 .text-grey-darker shadow;
   padding-bottom: 0.12rem;
