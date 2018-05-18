@@ -91,6 +91,13 @@ export default {
         this.selectedOption = { [this.display]: this.keyword };
       }
 
+      if (!this.selectedOption) {
+        this.$emit('invalid-selection', this.keyword);
+        this.keyword = '';
+        this.isOpen = false;
+        return;
+      }
+
       this.$emit('select', this.selectedOption);
       this.keyword = '';
       this.isOpen = false;
