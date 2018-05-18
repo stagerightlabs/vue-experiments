@@ -4,6 +4,7 @@
     ref="content"
     @keydown.esc="escape"
     @keydown.shift.enter.prevent="blur"
+    @keydown.tab="tabOff"
     @input="input"
     @focusin="focus"
     :tabindex="tabindex"
@@ -56,7 +57,6 @@ export default {
   },
   data() {
     return {
-      editing: false,
       original: '',
     };
   },
@@ -101,6 +101,9 @@ export default {
     escape() {
       this.restore();
       this.sync();
+      this.blur();
+    },
+    tabOff() {
       this.blur();
     },
   },
