@@ -2,7 +2,8 @@
   <div class="typeahead relative">
     <input
       type="text"
-      class="block appearance-none w-full border border-grey text-grey-dark py-3 px-4 pr-8 rounded"
+      class="block appearance-none w-full border border-grey
+        text-grey-dark py-3 px-4 pr-8 rounded"
       :placeholder="placeholder"
       @input="onInput($event.target.value)"
       @keyup.esc="isOpen = false"
@@ -12,10 +13,10 @@
       @keydown.enter="select"
       v-model="keyword"
     >
-    <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-dark">
-      <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-    </div>
-    <ul class="flex flex-column flex-wrap w-full overflow-hidden absolute list-reset border bg-white" v-show="isOpen">
+    <ul
+      class="flex flex-column flex-wrap w-full overflow-hidden absolute
+      list-reset border bg-white z-40"
+      v-show="isOpen">
       <li v-for="(option,index) in filteredOptions"
         class="pointer w-full p-2 border-b"
         :class="{
@@ -26,7 +27,7 @@
         @mouseenter="highlightedPosition = index"
         @mousedown="select"
       >
-      <slot name="item" :searchable="option.name"></slot>
+      <slot name="item" :searchable="option[display]"></slot>
       </li>
     </ul>
   </div>
@@ -47,6 +48,10 @@ export default {
     placeholder: {
       type: String,
       default: 'Select...',
+    },
+    display: {
+      type: String,
+      default: 'searchable',
     },
   },
   data() {
@@ -81,7 +86,7 @@ export default {
 
       if (!this.selectedOption && this.allowNew) {
         // We are adding an existing author
-        this.selectedOption = { searchable: this.keyword };
+        this.selectedOption = { [this.display]: this.keyword };
       }
 
       this.$emit('select', this.selectedOption);
