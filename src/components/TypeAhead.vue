@@ -2,8 +2,7 @@
   <div class="typeahead relative">
     <input
       type="text"
-      class="block appearance-none w-full border border-grey
-        text-grey-dark py-3 px-4 pr-8 rounded"
+      :class="inputClass"
       :placeholder="placeholder"
       @input="onInput($event.target.value)"
       @keyup.esc="isOpen = false"
@@ -26,8 +25,7 @@
         @click="select(option)"
         @mouseenter="highlightedPosition = index"
         @mousedown="select"
-      >
-      <slot name="item" :searchable="option[display]"></slot>
+      >{{ option[display] }}
       </li>
     </ul>
   </div>
@@ -52,6 +50,10 @@ export default {
     display: {
       type: String,
       default: 'searchable',
+    },
+    inputClass: {
+      type: String,
+      default: 'block appearance-none w-full border border-grey-dark text-grey-darkest py-3 px-4 pr-8 rounded',
     },
   },
   data() {
