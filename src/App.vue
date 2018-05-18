@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-row">
-    <main-menu class="w-full md:w-1/5"></main-menu>
-    <div class="w-full md:w-4/5 bg-white p-4 pt-8">
+    <main-menu class="w-full md:w-1/6"></main-menu>
+    <div class="w-full md:w-5/6 bg-white p-4 pt-8">
       <div id="app" class="container">
         <transition name="fade" mode="out-in">
           <router-view></router-view>
