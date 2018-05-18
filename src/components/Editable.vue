@@ -5,7 +5,6 @@
     @keydown.esc="escape"
     @keydown.shift.enter.prevent="blur"
     @input="input"
-    @blur="blur"
     @focusin="focus"
     :tabindex="tabindex"
     :type="type"
@@ -89,6 +88,11 @@ export default {
     blur() {
       this.$refs.content.blur();
       this.trim();
+
+      if (this.$refs.content.innerText !== this.original) {
+        this.$emit('updated');
+      }
+
       this.sync();
     },
     input() {
