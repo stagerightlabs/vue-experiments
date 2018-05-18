@@ -18,6 +18,9 @@
         Typing <span class="keyboard-symbol">Shift</span> +
         <span class="keyboard-symbol">Enter</span> will save the edits and blur the input.
       </li>
+      <li class="my-2">
+        <span class="keyboard-symbol">Tab</span> will save, blur and move the cursor to the next input.
+      </li>
       <li class="my-2">Automatic tab-focussing</li>
       <li class="my-2">Aria descriptors, placeholders and autofocus can be specified</li>
       <li class="my-2">
@@ -63,23 +66,21 @@
           ></editable>
         </div>
       </div>
-      <p>
-      Editable content can also be displayed inline:
-      <editable
-            input-class="ml-2 border-b-2 border-dotted inline-block"
-            v-model="character.name"
+      <p class="border-t pt-4">
+        Editable content can also be
+        <editable
+            input-class="border-b-2 border-dotted inline-block"
+            value="displayed inline"
           >
-      </editable>
-      or as a block element:
-      <editable
-            input-class="border-2 border-dotted block w-64 mx-auto mt-4 p-2"
-            v-model="character.position"
-          >
-      </editable>
-    </p>
+        </editable>
+        or as a
+        <editable
+              input-class="border-2 border-dotted block w-64 mx-auto mt-4 p-2"
+              value="block element."
+            >
+        </editable>
+      </p>
     </div>
-
-    <hr>
     <h4 class="mt-4">Object:</h4>
     <p class="bg-grey-lighter border p-4 mx-0 font-mono">{{ character }}</p>
 
