@@ -83,13 +83,6 @@
     </div>
     <h4 class="mt-4">Object:</h4>
     <p class="bg-grey-lighter border p-4 mx-0 font-mono">{{ character }}</p>
-
-    <h4 class="mt-4">Usage</h4>
-    <p class="bg-grey-lighter border p-4 mx-0 font-mono">
-      <pre>&lt;editable input-class=&quot;ml-2 border-b-2 border-dotted inline-block&quot; v-model=&quot;character.name&quot;&gt;
-  &lt;icon name=&quot;pencil-alt&quot; class=&quot;text-grey w-3 h-3&quot;&gt;&lt;/icon&gt;
-&lt;/editable&gt;</pre>
-    </p>
   </div>
 </template>
 
@@ -118,7 +111,3 @@ export default {
   },
 };
 </script>
-
-<style>
-
-</style>
