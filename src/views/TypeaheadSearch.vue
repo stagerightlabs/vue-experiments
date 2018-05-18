@@ -40,7 +40,7 @@
       </div>
       <div class="w-1/2">
         <p>
-          Chosen
+          Selected
           <span
             @click="reset('selectionA')"
             class="text-grey-light cursor-pointer float-right">
@@ -55,7 +55,7 @@
               {{ selected.name }}
             </li>
           </ul>
-          <p v-else class="text-grey">Nothing selected..</p>
+          <p v-else class="text-grey">Nothing yet...</p>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
       </div>
       <div class="w-1/2">
         <p>
-          Chosen
+          Selected
           <span
             @click="reset('selectionB')"
             class="text-grey-light cursor-pointer float-right">
@@ -90,11 +90,11 @@
               <span v-if="isNewEntry(selected)" class="text-green-darker">[added by user]</span>
             </li>
           </ul>
-          <p v-else class="text-grey">Nothing selected..</p>
+          <p v-else class="text-grey">Nothing yet...</p>
         </div>
       </div>
     </div>
-    <p class="mt-8">It would be nice if we could allow customized styling of the <code>UL</code> and <code>LI</code> tags used in the options list.</p>
+    <p class="mt-8">It would be nice if we could allow customized styling of the <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags used in the options list.</p>
   </div>
 </template>
 
