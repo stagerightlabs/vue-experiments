@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import 'vue-awesome/icons/times';
+
 export default {
   props: ['modalVisible'],
   data() {

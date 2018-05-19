@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import 'vue-awesome/icons/pencil-alt';
 import Editable from '@/components/Editable.vue';
 import EventBus from '@/event-bus';
 

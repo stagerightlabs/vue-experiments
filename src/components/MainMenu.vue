@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import 'vue-awesome/icons/bars';
+
 export default {
   methods: {
     toggleMenu() {

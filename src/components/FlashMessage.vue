@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import 'vue-awesome/icons/times';
+
 export default {
   props: ['message', 'level', 'nonce', 'delay'],
   data() {

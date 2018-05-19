@@ -1,9 +1,4 @@
 import Vue from 'vue';
-import 'vue-awesome/icons/times';
-import 'vue-awesome/icons/pencil-alt';
-import 'vue-awesome/icons/brands/gitlab';
-import 'vue-awesome/icons/bars';
-import 'vue-awesome/icons/exclamation-triangle';
 import Icon from 'vue-awesome/components/Icon.vue';
 import PortalVue from 'portal-vue';
 import App from './App.vue';
