@@ -106,7 +106,7 @@ export default {
   computed: {
     filteredOptions() {
       const re = new RegExp(this.keyword, 'i');
-      return this.options.filter(o => o.name.match(re));
+      return this.options.filter(o => o[this.display].match(re));
     },
   },
 };
