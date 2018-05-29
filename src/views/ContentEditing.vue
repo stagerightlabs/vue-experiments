@@ -33,6 +33,9 @@
         blur; this could be used as a trigger by the parent component to persist
         the updated object.
       </li>
+      <li class="my-2">
+        Formatting of pasted content is stripped on blur; only text is stored
+      </li>
     </ul>
     <h4>Demo</h4>
     <div class="border p-4 mt-4 text-lg">
@@ -87,9 +90,9 @@
 </template>
 
 <script>
+import EventBus from '@/event-bus';
 import 'vue-awesome/icons/pencil-alt';
 import Editable from '@/components/Editable.vue';
-import EventBus from '@/event-bus';
 
 export default {
   name: 'ContentEditing',
