@@ -13,11 +13,11 @@
       v-model="keyword"
     >
     <ul
-      class="flex flex-column flex-wrap w-full overflow-hidden absolute
+      class="flex flex-col w-full absolute
       list-reset border bg-white z-40"
       v-show="isOpen">
       <li v-for="(option,index) in filteredOptions"
-        class="pointer w-full p-2 border-b"
+        class="pointer w-full p-2 border-b truncate"
         :class="{
           'bg-grey-lighter': index === highlightedPosition
         }"
@@ -32,7 +32,6 @@
 </template>
 
 <script>
-// http://taha-sh.com/blog/building-an-awesome-reusable-autocomplete-input-component-in-vue-21-part-one
 export default {
   props: {
     options: {

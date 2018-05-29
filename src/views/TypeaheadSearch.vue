@@ -34,7 +34,7 @@
           @select="onSelectionA"
           @invalid-selection="invalidSelection"
           class="w-64"
-          input-class="border border-green text-green-dark py-3 px-4 pr-8 bg-green-lightest"
+          input-class="border border-green text-green-dark py-3 px-4 pr-8 bg-green-lightest w-full"
           >
         </type-ahead>
       </div>
@@ -68,7 +68,8 @@
           class="w-64"
           display="name"
           :options="options"
-          :allow-new="true">
+          :allow-new="true"
+        >
         </type-ahead>
       </div>
       <div class="w-1/2">
@@ -94,7 +95,10 @@
         </div>
       </div>
     </div>
-    <p class="mt-8">It would be nice if we could allow customized styling of the <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags used in the options list.</p>
+    <p class="mt-8">
+      It would be nice if we could allow customized styling of the <code>&lt;ul&gt;</code>
+      and <code>&lt;li&gt;</code> tags used in the options list.
+    </p>
   </div>
 </template>
 
