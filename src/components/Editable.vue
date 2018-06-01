@@ -122,6 +122,7 @@ export default {
     // Pressing shift+enter should trigger a blur event which will then
     // bubble up to the component's focusout handler
     shiftEnter() {
+      window.getSelection().removeAllRanges();
       this.$refs.content.blur();
     },
   },
