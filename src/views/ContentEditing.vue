@@ -19,7 +19,8 @@
         <span class="keyboard-symbol">Enter</span> will save the edits and blur the input.
       </li>
       <li class="my-2">
-        <span class="keyboard-symbol">Tab</span> will save, blur and move the cursor to the next input.
+        <span class="keyboard-symbol">Tab</span> will save, blur and move the
+        cursor to the next input.
       </li>
       <li class="my-2">Automatic tab-focussing</li>
       <li class="my-2">Aria descriptors, placeholders and autofocus can be specified</li>
