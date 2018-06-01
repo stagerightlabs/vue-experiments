@@ -16,7 +16,7 @@
     contenteditable="true"
     ></div>
     <div v-if="hasSlotContent" @click="focus" style="display:inline-block; cursor:pointer">
-      <slot ></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
