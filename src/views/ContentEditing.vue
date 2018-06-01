@@ -36,6 +36,9 @@
       <li class="my-2">
         Formatting of pasted content is stripped on blur; only text is stored
       </li>
+      <li class="my-2">
+        It will automatically select all of the existing content on focus.
+      </li>
     </ul>
     <h4>Demo</h4>
     <div class="border p-4 mt-4 text-lg">
@@ -46,7 +49,7 @@
             input-class="ml-2 border-b-2 border-dotted inline-block"
             @updated="updated"
             v-model="character.name"
-          ><icon name="pencil-alt" class="text-grey w-3 h-3"></icon></editable>
+          ><icon name="pencil-alt" class="text-grey w-3 h-3 ml-1"></icon></editable>
         </div>
       </div>
       <div class="flex my-2">

@@ -3,9 +3,7 @@
   <div
     ref="content"
     @keydown.esc="escape"
-    @keydown.shift.enter.prevent="blur"
-
-    @keydown.tab="tabOff"
+    @keydown.shift.enter.prevent="shiftEnter"
     @input="sync"
     @focusin="focus"
     :tabindex="tabindex"
@@ -91,11 +89,14 @@ export default {
       // Save a copy of our current value for future comparisson
       this.backup();
       // Force the browser to give focus to our contenteditable div
-      this.$nextTick(() => this.$refs.content.focus());
+      this.$nextTick(() => {
+        this.$refs.content.focus();
+        document.execCommand('selectAll', false, null);
+      });
     },
     // Fired when the component loses focus
     blur() {
-      // Trigger the blur event on the contenteditable div
+      // Trigger the blur event on the contenteditable dom element
       this.$refs.content.blur();
 
       // Remove excess whitespace
@@ -118,9 +119,10 @@ export default {
       // Trigger a blur event
       this.blur();
     },
-    // Treat a tab keypress as a blur event
-    tabOff() {
-      this.blur();
+    // Pressing shift+enter should trigger a blur event which will then
+    // bubble up to the component's focusout handler
+    shiftEnter() {
+      this.$refs.content.blur();
     },
   },
   mounted() {
