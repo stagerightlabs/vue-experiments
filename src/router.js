@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import NotFound from './views/NotFound.vue';
-import Modals from './views/Modals.vue';
 import Toast from './views/Toast.vue';
+import Modals from './views/Modals.vue';
+import NotFound from './views/NotFound.vue';
+import VuePickaday from './views/PikadayDemo.vue';
 import ContentEditing from './views/ContentEditing.vue';
 import TypeaheadSearch from './views/TypeaheadSearch.vue';
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/typeahead',
       name: 'typeahead',
       component: TypeaheadSearch,
+    },
+    {
+      path: '/vue-pickaday',
+      name: 'vue-picakday-demo',
+      component: VuePickaday,
     },
     {
       path: '*',
