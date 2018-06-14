@@ -1,16 +1,10 @@
 <template>
-  <input
-    :value="value"
-    ref="input"
-    type="text"
-    :placeholder="format"
-    :class="inputClass"
-  >
+  <input :value="value" ref="input" type="text" :placeholder="format" :class="inputClass">
 </template>
 
 <script>
 import Pikaday from 'pikaday';
-import 'pikaday/css/pikaday.css';
+import '@/assets/pikaday.css';
 
 export default {
   props: {

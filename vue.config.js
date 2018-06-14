@@ -1,4 +1,5 @@
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const whitelister = require('purgecss-whitelister');
 const glob = require('glob-all');
 const path = require('path');
 
@@ -18,6 +19,7 @@ module.exports = {
           path.join(__dirname, './**/*.vue'),
           path.join(__dirname, './src/**/*.js'),
         ]),
+        whitelist: whitelister(['./src/assets/pikaday.css']),
         extractors: [
           {
             extractor: TailwindExtractor,
