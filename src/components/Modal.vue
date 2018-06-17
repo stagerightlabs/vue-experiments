@@ -30,10 +30,18 @@ export default {
     },
   },
   mounted() {
-    document.addEventListener('keydown', (e) => {
-      if (this.modalVisible && e.keyCode === 27) {
+    // A function to handle an escape key event
+    const escapeHandler = (e) => {
+      if (this.modalVisible && e.key === 'Escape') {
         this.close();
       }
+    };
+    // Bind the event
+    document.addEventListener('keydown', escapeHandler);
+
+    // Register this event listener to be removed when the component is destroyed
+    this.$once('hook:destroyed', () => {
+      document.removeEventListener('keydown', escapeHandler);
     });
   },
 };
