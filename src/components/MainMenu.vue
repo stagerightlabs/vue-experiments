@@ -24,6 +24,7 @@
         <router-link to="/toast-notifications">Toast Notifications</router-link>
         <router-link to="/typeahead">Typeahead</router-link>
         <router-link to="/vue-pickaday">Vue Pikaday Demo</router-link>
+        <router-link to="/draggable-sorting">Draggable Sorting</router-link>
       </div>
     </transition>
     <p class="self-center mt-8 hidden md:flex md:flex-col">
@@ -32,11 +33,11 @@
         href="https://gitlab.com/stage-right-labs/vue-experiments"
         target="_blank"
       > <icon name="brands/gitlab" class="w-3 h-3"></icon> View Source</a>
-      <img
+      <!-- <img
         src="https://gitlab.com/stage-right-labs/vue-experiments/badges/master/build.svg"
         aria-hidden="true"
         class="project-badge"
-      >
+      > -->
     </p>
   </div>
 </template>

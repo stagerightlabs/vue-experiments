@@ -6,6 +6,7 @@ import NotFound from './views/NotFound.vue';
 import VuePickaday from './views/PikadayDemo.vue';
 import ContentEditing from './views/ContentEditing.vue';
 import TypeaheadSearch from './views/TypeaheadSearch.vue';
+import DraggableSorting from './views/DraggableSorting.vue';
 
 Vue.use(Router);
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/vue-pickaday',
       name: 'vue-picakday-demo',
       component: VuePickaday,
+    },
+    {
+      path: '/draggable-sorting',
+      name: 'draggable-sorting',
+      component: DraggableSorting,
     },
     {
       path: '*',
