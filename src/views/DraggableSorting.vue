@@ -4,31 +4,53 @@
     <p>
       Allow the contents of a list to be re-arranged with a mouse.
     </p>
-    <div class="mx-auto w-5/6 md:3/4 lg:w-1/2 mt-8 border-t border-grey-lighter">
+    <ul class="mx-8">
+      <li class="my-2">Renderless Vue components wrapping the <a href="https://github.com/Shopify/draggable">Shoppify Draggable library</a></li>
+      <li class="my-2">Inspired by Adam Wathan</li>
+      <li class="my-2">
+        The original list is updated whenever a drag event completes, thanks to <code>v-model</code>
+        data binding.
+      </li>
+    </ul>
+
+    <sortable-list v-model="characters">
       <div
-        class="flex justify-between items-center border-b border-grey-lighter p-2"
-        v-for="character in characters"
-        :key="character.id"
+        class="mx-auto w-5/6 md:3/4 lg:w-1/2 mt-8 border-t border-grey-lighter"
+        slot-scope="{ items:characters }"
       >
-        <img
-          :src="character.image"
-          :alt="character.name"
-          class="hidden md:block w-16 h-16 flex-none"
+        <sortable-item
+          v-for="character in characters"
+          :key="character.id"
         >
-        <div class="px-4 py-2 text-left flex-grow">
-          <h3>{{ character.name }}</h3>
-          <p class="mt-1 my-0 mx-0 w-full justify-between text-grey-darker text-sm hidden md:flex">
-            <span>Group: {{ character.group }}</span>
-            <span>Sort Order: </span>
-          </p>
-        </div>
-        <icon name="grip-horizontal" class="text-grey-lighter flex-none mx-2" ></icon>
+          <div
+            class="flex bg-white justify-between items-center border-b border-grey-lighter p-2"
+          >
+            <img
+              :src="character.image"
+              :alt="character.name"
+              class="hidden md:block w-16 h-16 flex-none rounded-full"
+            >
+            <div class="px-4 py-2 text-left flex-grow">
+              <h3>{{ character.name }}</h3>
+            </div>
+            <sortable-handle>
+              <icon
+                name="grip-horizontal"
+                class="text-grey-lighter flex-none mx-2 cursor-move"
+              ></icon>
+            </sortable-handle>
+          </div>
+        </sortable-item>
       </div>
-    </div>
+    </sortable-list>
   </div>
 </template>
 
 <script>
+import SortableList from '@/components/SortableList.vue';
+import SortableItem from '@/components/SortableItem.vue';
+import SortableHandle from '@/components/SortableHandle.vue';
+
 // import 'vue-awesome/icons/solid/grip-vertical';
 import Icon from 'vue-awesome/components/Icon.vue';
 
@@ -44,6 +66,11 @@ Icon.register({
 
 export default {
   name: 'DraggableSorting',
+  components: {
+    SortableList,
+    SortableItem,
+    SortableHandle,
+  },
   data() {
     return {
       characters: [
@@ -65,30 +92,7 @@ export default {
         {
           id: 6, name: 'Fyodor Ilyich Kulygin', group: 'Prozorovs', image: 'https://randomuser.me/api/portraits/men/59.jpg',
         },
-        {
-          id: 7, name: 'Aleksandr Ignatyevich Vershinin', group: 'Soldiers', image: 'https://randomuser.me/api/portraits/men/58.jpg',
-        },
-        {
-          id: 8, name: 'Baron Nikolaj Lvovich Tuzenbach', group: 'Soldiers', image: 'https://randomuser.me/api/portraits/men/57.jpg',
-        },
-        {
-          id: 9, name: 'Captain Vassily Vasilyevich Solyony', group: 'Soldiers', image: 'https://randomuser.me/api/portraits/men/56.jpg',
-        },
-        {
-          id: 10, name: 'Ivan Romanovich Chebutykin', group: 'Soldiers', image: 'https://randomuser.me/api/portraits/men/55.jpg',
-        },
-        {
-          id: 11, name: 'Aleksej Petrovich Fedotik', group: 'Soldiers', image: 'https://randomuser.me/api/portraits/men/54.jpg',
-        },
-        {
-          id: 12, name: 'Vladimir Karlovich Rode', group: 'Soldiers', image: 'https://randomuser.me/api/portraits/men/53.jpg',
-        },
-        {
-          id: 13, name: 'Anfisa', group: 'Cameos', image: 'https://randomuser.me/api/portraits/women/52.jpg',
-        },
-        {
-          id: 14, name: 'Ferapont', group: 'Cameos', image: 'https://randomuser.me/api/portraits/men/51.jpg',
-        },
+
       ],
     };
   },
@@ -96,5 +100,10 @@ export default {
 </script>
 
 <style>
-
+.draggable-source--is-dragging {
+  background-color: #f1f5f8;
+}
+.draggable-source--is-dragging > * {
+  opacity: 0;
+}
 </style>
