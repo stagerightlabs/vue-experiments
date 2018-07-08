@@ -27,7 +27,12 @@
         visible in the browser window.
       </li>
     </ul>
-    <h4 class="mt-4 mb-2">Choose A Character</h4>
+    <h4 class="mt-4 mb-2">
+      Choose A Character from
+      <a target="blank" href="https://www.gutenberg.org/files/7986/7986-h/7986-h.htm#link2H_4_0008">
+        <em>The Three Sisters</em>
+      </a>
+    </h4>
     <search-select
       v-model="selected"
       :options="characters"

@@ -23,7 +23,7 @@
         <router-link to="/content-editing">Content Editing</router-link>
         <router-link to="/toast-notifications">Toast Notifications</router-link>
         <router-link to="/typeahead">Typeahead</router-link>
-        <router-link to="/vue-pickaday">Vue Pikaday Demo</router-link>
+        <router-link to="/vue-pickaday">Pikaday Wrapper</router-link>
         <router-link to="/draggable-sorting">Draggable Sorting</router-link>
         <router-link to="/search-select">Search Select</router-link>
       </div>
