@@ -26,6 +26,7 @@
         <router-link to="/vue-pickaday">Pikaday Wrapper</router-link>
         <router-link to="/draggable-sorting">Draggable Sorting</router-link>
         <router-link to="/search-select">Search Select</router-link>
+        <router-link to="/shift-click-range">Shift+Click Range Select</router-link>
       </div>
     </transition>
     <p class="self-center mt-8 hidden md:flex md:flex-col">

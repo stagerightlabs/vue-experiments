@@ -8,6 +8,7 @@ import ContentEditing from './views/ContentEditing.vue';
 import TypeaheadSearch from './views/TypeaheadSearch.vue';
 import DraggableSorting from './views/DraggableSorting.vue';
 import SearchSelectDemo from './views/SearchSelectDemo.vue';
+import ShiftClickRangeDemo from './views/ShiftClickRangeDemo.vue';
 
 Vue.use(Router);
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/search-select',
       name: 'search-select-demo',
       component: SearchSelectDemo,
+    },
+    {
+      path: '/shift-click-range',
+      name: 'shift-click-range-demo',
+      component: ShiftClickRangeDemo,
     },
     {
       path: '*',
