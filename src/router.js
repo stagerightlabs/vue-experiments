@@ -4,11 +4,11 @@ import Toast from './views/Toast.vue';
 import Modals from './views/Modals.vue';
 import NotFound from './views/NotFound.vue';
 import VuePickaday from './views/PikadayDemo.vue';
+import ShiftClickDemo from './views/ShiftClickDemo.vue';
 import ContentEditing from './views/ContentEditing.vue';
 import TypeaheadSearch from './views/TypeaheadSearch.vue';
 import DraggableSorting from './views/DraggableSorting.vue';
 import SearchSelectDemo from './views/SearchSelectDemo.vue';
-import ShiftClickRangeDemo from './views/ShiftClickRangeDemo.vue';
 
 Vue.use(Router);
 
@@ -56,9 +56,9 @@ export default new Router({
       component: SearchSelectDemo,
     },
     {
-      path: '/shift-click-range',
-      name: 'shift-click-range-demo',
-      component: ShiftClickRangeDemo,
+      path: '/shift-click',
+      name: 'shift-click-demo',
+      component: ShiftClickDemo,
     },
     {
       path: '*',
