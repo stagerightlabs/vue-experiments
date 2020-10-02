@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import 'vue-awesome/icons/brands/gitlab';
+import 'vue-awesome/icons/brands/github';
 import MainMenu from '@/components/MainMenu.vue';
 import FlashStack from '@/components/FlashStack.vue';
 
