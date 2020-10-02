@@ -31,15 +31,13 @@
     </transition>
     <p class="self-center mt-8 hidden md:flex md:flex-col">
       <a
-        class="no-underline text-sm text-grey-dark italic text-center mb-2"
-        href="https://gitlab.com/stage-right-labs/vue-experiments"
+        class="no-underline text-sm text-grey-dark italic text-center mb-2 hover:text-green-light"
+        href="https://github.com/stagerightlabs/vue-experiments"
         target="_blank"
-      > <icon name="brands/gitlab" class="w-3 h-3"></icon> View Source</a>
-      <img
-        src="https://gitlab.com/stage-right-labs/vue-experiments/badges/master/build.svg"
-        aria-hidden="true"
-        class="project-badge"
       >
+        <icon name="brands/github" class="w-5 h-5"></icon>
+        View Source
+      </a>
     </p>
   </div>
 </template>
