@@ -30,7 +30,7 @@
     "babel-core": "7.0.0-bridge.0",
     "chai": "^4.1.2",
     "glob-all": "^3.1.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "purgecss-webpack-plugin": "^0.22.1",
     "purgecss-whitelister": "^2.1.0",
     "sass-loader": "^6.0.6",
